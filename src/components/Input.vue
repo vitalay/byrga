@@ -1,7 +1,7 @@
 
 <template>
 <input min="0" type="number" @input="changeAmount($event.target.value)" placeholder="Введите число"><br>
-<button @click="convert()" className="color-scale-button">Конвертировать</button>
+<button @click="convert()" className="color-scale-button">Конвертация</button>
   
 </template>
 
