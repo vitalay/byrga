@@ -2,7 +2,8 @@
 <template>
 <input min="0" type="number" @input="changeAmount($event.target.value)" placeholder="Введите число"><br>
 <button @click="convert()" className="color-scale-button">Конвертация</button>
-  
+<button @click="favourite()" className="color-scale-button">в избранное</button>
+
 </template>
 
 
@@ -15,6 +16,10 @@ export default {
         required: true
         },
         convert: {
+        type: Function,
+        required: true
+        },
+        favourite: {
         type: Function,
         required: true
         }
@@ -53,6 +58,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-left: 20px;
 }
 
 .color-scale-button:hover {

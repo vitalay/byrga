@@ -1,7 +1,7 @@
 <template>
   <h1>CRYPTO</h1>
 
-  <Input :changeAmount="changeAmount" :convert="convert"/>
+  <Input :changeAmount="changeAmount" :convert="convert" :favourite="favourite"/>
  <p v-if="error !== ''"> {{ error }} </p>
  <p v-if="result !== 0" className="result-text"> {{ result }} </p>
 
@@ -28,12 +28,17 @@ export default {
        cryptoFirst: '',
        cryptoSecond: '',
        error: '',
-       result: 0
+       result: 0,
 
      }
    },
 
    methods: {
+    favourite() {
+      if (this.result !== 0) {
+        localStorage.setItem('result', this.result)
+      }
+    },
     changeAmount( val ) {
       this.amount = val
 
