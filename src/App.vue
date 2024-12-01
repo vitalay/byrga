@@ -5,7 +5,7 @@
  <p v-if="error !== ''"> {{ error }} </p>
  <p v-if="result !== 0" className="result-text"> {{ result }} </p>
 
-  <Favourite :favs="favs" v-if="favs.length > 0"/>
+  <Favourite :favs="favs" v-if="favs.length > 0" :getFromFavs="getFromFavs"/>
 
 
 
@@ -45,6 +45,11 @@ export default {
     from: this.cryptoFirst,
     to: this.cryptoSecond
   })
+    },
+    getFromFavs(index) {
+      
+      this.cryptoFirst = this.favs[index].from
+      this.cryptoSecond = this.favs[index].to
     },
     changeAmount( val ) {
       this.amount = val
