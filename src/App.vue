@@ -10,8 +10,8 @@
 
 
   <div className="selector">
-    <Selector :setCrypto="setCryptoFirst" />
-    <Selector :setCrypto="setCryptoSecond" />
+    <Selector :setCrypto="setCryptoFirst" :cryptoNow="cryptoFirst" />
+    <Selector :setCrypto="setCryptoSecond" :cryptoNow="cryptoSecond" />
   </div>
 </template>
 
